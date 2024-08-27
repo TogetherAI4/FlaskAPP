@@ -1,4 +1,5 @@
 
+
 ```markdown
 # Prompt Manager Flask App
 
@@ -25,7 +26,8 @@ flask_app/
 
 ## Voraussetzungen
 
-Stelle sicher, dass Python 3.x installiert ist. Es wird empfohlen, eine virtuelle Umgebung zu verwenden.
+- **Python 3.x**: Stelle sicher, dass Python 3.x installiert ist.
+- **Virtuelle Umgebung**: Es wird empfohlen, eine virtuelle Umgebung für die Installation der Abhängigkeiten zu verwenden.
 
 ## Installation
 
@@ -64,7 +66,16 @@ Die App stellt eine REST-API zur Verfügung, um die Prompts zu verwalten:
   Gibt eine Liste aller Prompts zurück.
 
 - `POST /prompts`  
-  Fügt einen neuen Prompt hinzu. Erfordert JSON-Daten im Body.
+  Fügt einen neuen Prompt hinzu. Erfordert JSON-Daten im Body. Beispiel:
+  ```json
+  {
+    "cmd": "example_command",
+    "act": "example_action",
+    "prompt": "example_prompt_text",
+    "enable": true,
+    "tags": ["tag1", "tag2"]
+  }
+  ```
 
 - `PUT /prompts/<cmd>`  
   Aktualisiert einen bestehenden Prompt basierend auf dem `cmd`-Wert. Erfordert JSON-Daten im Body.
@@ -86,19 +97,32 @@ Die Datei `user_custom.json` enthält die Prompts und kann manuell oder über di
 }
 ```
 
+- **cmd**: Ein eindeutiger Bezeichner für den Prompt.
+- **act**: Die Aktion oder der Zweck des Prompts.
+- **prompt**: Der Text des Prompts.
+- **enable**: Ein boolescher Wert, der angibt, ob der Prompt aktiviert ist.
+- **tags**: Eine Liste von Tags zur Kategorisierung des Prompts.
+
 ## Anpassung des Frontends
 
-Die HTML-, CSS- und JavaScript-Dateien im `templates`- und `static`-Ordner können nach Belieben angepasst werden, um das Frontend-Design und die Funktionalität zu erweitern.
+Die HTML-, CSS- und JavaScript-Dateien im `templates`- und `static`-Ordner können nach Belieben angepasst werden, um das Frontend-Design und die Funktionalität zu erweitern. 
+
+- **index.html**: Die Hauptseite, auf der Prompts angezeigt und verwaltet werden.
+- **chat.html**: Eine Platzhalterseite für eine mögliche Chat-Funktion.
+
+**Hinweis**: Änderungen an den Frontend-Dateien können ein erneutes Laden der Seite im Browser erfordern, um die Änderungen sichtbar zu machen.
 
 ## Lizenz
 
 Dieses Projekt ist unter der [MIT Lizenz](LICENSE) lizenziert.
+
+## Beitragende
+
+Falls du zu diesem Projekt beitragen möchtest, eröffne bitte ein Issue oder einen Pull-Request im [Repository](<REPOSITORY_URL>).
+
+## Kontakt
+
+Für Fragen oder Feedback kannst du mich unter [deine E-Mail-Adresse] erreichen.
+
 ```
 
-### Erklärung:
-
-- **Installation und Start**: Der Abschnitt beschreibt, wie man die App installiert, die Abhängigkeiten lädt und die App startet.
-- **API-Endpunkte**: Listet die verfügbaren REST-API-Endpunkte auf.
-- **JSON-Dateistruktur**: Beschreibt, wie die JSON-Datei aufgebaut ist, damit Benutzer sie verstehen und anpassen können.
-
-Du kannst diese `README.md` direkt verwenden oder nach Belieben erweitern. Wenn du weitere Funktionen hinzufügen möchtest oder eine spezifische Anpassung benötigst, lass es mich wissen!
