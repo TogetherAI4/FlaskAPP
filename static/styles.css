@@ -113,6 +113,11 @@ h1 {
 #edit-prompt {
     width: 100%;
     display: none;
+    padding: 10px;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    border: 1px solid #444444;
+    border-radius: 5px;
 }
 
 #edit-prompt {
@@ -265,6 +270,7 @@ h1 {
 .chat-form button:hover {
     background-color: #3700b3;
 }
+
 /* Bearbeitungsansicht - Eingabefelder und Buttons */
 input[type="text"], textarea {
     background-color: #2b2b2b;
@@ -317,7 +323,8 @@ button#delete-button:hover {
 #edit-prompt {
     display: block;
 }
-/* Grundlegende Stile */
+
+/* Grundlegende Stile für schwarze Oberfläche */
 body {
     background-color: #000;
     color: #e0e0e0;
@@ -354,6 +361,7 @@ nav ul li a:hover {
     color: #bb86fc;
 }
 
+/* Heldenbereich */
 .hero {
     text-align: center;
     margin-top: 40px;
@@ -392,4 +400,47 @@ nav ul li a:hover {
     padding: 20px;
 }
 
-/* Weitere vorhandene CSS-Klassen werden hierhin übertragen */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .prompt-list,
+    .prompt-details {
+        width: 100%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .prompt-item h3 {
+        font-size: 1.2em;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
